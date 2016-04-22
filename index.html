@@ -12,7 +12,16 @@
 		            
         function startDB() {
             // create db  
-            dataBase = indexedDB.open("object", 1);     
+            dataBase = indexedDB.open("object", 1)
+
+            dataBase.onupgradeneeded = function (e) {
+                active = dataBase.result;
+                // create table
+                object = active.createObjectStore("people", { keyPath : 'id', autoIncrement : true });
+                // create indice
+                object.createIndex('by_name', 'name', { unique : false });
+                object.createIndex('by_dni', 'dni', { unique : true });
+            };    
         };
 	</script>
 </body>
