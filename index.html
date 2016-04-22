@@ -6,7 +6,10 @@
 </head>
 <body onload="startDB();">
 	 <h1>HTML5 INDEXDB</h1>
-	
+	<input type="text" id="dni" placeholder="Introducir dni" />
+    <input type="text" id="name" placeholder="Introducir nombre" /> 
+    <input type="text" id="surname" placeholder="Introducir apellidos" />
+    <button type="button" onclick="add();">Guardar</button>
 	<script>
 		var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 		            
