@@ -38,21 +38,22 @@
             var active = dataBase.result;
             var data = active.transaction(["people"], "readwrite");
             var object = data.objectStore("people");
+            
+            var request = object.put({
+                dni: document.querySelector("#dni").value,
+                name: document.querySelector("#name").value,
+                surname: document.querySelector("#surname").value
+            });
+            request.onerror = function (e) {
+                alert(request.error.name + '\n\n' + request.error.message);
+            };
+            data.oncomplete = function (e) {
+                document.querySelector("#dni").value = '';
+                document.querySelector("#name").value = '';
+                document.querySelector("#surname").value = '';
+                alert('Objeto agregado correctamente');
+            };
         }
-        var request = object.put({
-            dni: document.querySelector("#dni").value,
-            name: document.querySelector("#name").value,
-            surname: document.querySelector("#surname").value
-        });
-        request.onerror = function (e) {
-            alert(request.error.name + '\n\n' + request.error.message);
-        };
-        data.oncomplete = function (e) {
-            document.querySelector("#dni").value = '';
-            document.querySelector("#name").value = '';
-            document.querySelector("#surname").value = '';
-            alert('Objeto agregado correctamente');
-        };
 	</script>
 </body>
 </html>
