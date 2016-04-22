@@ -37,7 +37,13 @@
         function add() {
             var active = dataBase.result;
             var data = active.transaction(["people"], "readwrite");
+            var object = data.objectStore("people");
         }
+        var request = object.put({
+            dni: document.querySelector("#dni").value,
+            name: document.querySelector("#name").value,
+            surname: document.querySelector("#surname").value
+        });
 	</script>
 </body>
 </html>
