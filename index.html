@@ -32,8 +32,12 @@
                 dataBase.onerror = function (e)  {
                     alert('Error cargando la base de datos');
                 }
-            };    
-        };
+            }            
+        }
+        function add() {
+            var active = dataBase.result;
+            var data = active.transaction(["people"], "readwrite");
+        }
 	</script>
 </body>
 </html>
