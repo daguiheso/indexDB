@@ -21,6 +21,14 @@
                 // create indice
                 object.createIndex('by_name', 'name', { unique : false });
                 object.createIndex('by_dni', 'dni', { unique : true });
+
+                dataBase.onsuccess = function (e) {
+                    alert('Base de datos cargada correctamente');   
+                };
+                
+                dataBase.onerror = function (e)  {
+                    alert('Error cargando la base de datos');
+                }
             };    
         };
 	</script>
