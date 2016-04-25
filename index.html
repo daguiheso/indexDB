@@ -3,13 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>INDEXDB</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body onload="startDB();">
-	 <h1>HTML5 INDEXDB</h1>
-	<input type="text" id="dni" placeholder="Introducir dni" />
-    <input type="text" id="name" placeholder="Introducir nombre" /> 
-    <input type="text" id="surname" placeholder="Introducir apellidos" />
-    <button type="button" onclick="add();">Guardar</button>
+    <div class="container">        
+    	<h1>HTML5 INDEXDB</h1>
+    	<input type="text" id="dni" placeholder="Introducir dni" />
+        <input type="text" id="name" placeholder="Introducir nombre" /> 
+        <input type="text" id="surname" placeholder="Introducir apellidos" />
+        <button type="button" onclick="add();">Guardar</button>
+    </div>
 	<script>
 		var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 		            
@@ -55,5 +58,7 @@
             };
         }
 	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
