@@ -8,10 +8,16 @@
 <body onload="startDB();">
     <div class="container">        
     	<h1>HTML5 INDEXDB</h1>
-    	<input type="text" id="dni" placeholder="Introducir dni" />
-        <input type="text" id="name" placeholder="Introducir nombre" /> 
-        <input type="text" id="surname" placeholder="Introducir apellidos" />
-        <button type="button" onclick="add();">Guardar</button>
+        <div class="form-group">
+        	<input type="text" id="dni" class="form-control" placeholder="Introducir dni" />
+        </div>
+        <div class="form-group">
+            <input type="text" id="name" class="form-control" placeholder="Introducir nombre" /> 
+        </div>
+        <div class="form-group">
+            <input type="text" id="surname" class="form-control" placeholder="Introducir apellidos" />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="add();">Guardar</button>
     </div>
 	<script>
 		var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
